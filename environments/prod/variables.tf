@@ -15,9 +15,9 @@ variable "app_domain" {
 }
 
 variable "container_image" {
-  description = "Container image used in the ECS service."
+  description = "Container image used by the Kubernetes deployment."
   type        = string
-  default     = "public.ecr.aws/amazonlinux/amazonlinux:latest"
+  default     = "public.ecr.aws/nginx/nginx:latest"
 }
 
 variable "container_port" {
@@ -27,7 +27,7 @@ variable "container_port" {
 }
 
 variable "desired_count" {
-  description = "Desired ECS task count per region."
+  description = "Desired replica count for the application deployment (Kubernetes)."
   type        = number
   default     = 2
 }

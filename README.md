@@ -5,7 +5,7 @@ This repository contains a scalable Terraform scaffold for a high-availability m
 ## What is included
 
 - `modules/network` - VPC, public/private subnets, NAT gateway, routing, security groups
-- `modules/compute` - Fargate ECS service with ALB, optional ACM HTTPS
+- `modules/compute` - EKS cluster with ALB integration, optional ACM HTTPS
 - `modules/database` - Aurora PostgreSQL cluster and optional global cluster support
 - `modules/global` - Route53 health checks and weighted DNS routing across regions
 - `environments/prod` - provider configuration, backend state, and environment-specific module wiring
@@ -21,6 +21,6 @@ This repository contains a scalable Terraform scaffold for a high-availability m
 4. Run `terraform plan` and `terraform apply`.
 
 ## Notes
-- This project uses AWS Fargate for stateless app deployment and Aurora for regional database clusters.
+- This project uses AWS EKS for stateless app deployment and Aurora for regional database clusters.
 - The database module can be configured for Aurora Global Database replication by setting `global_cluster_identifier`.
 - Route53 health checks and weighted DNS route traffic to both regions with failover support.
